@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+        <form>
+            Amount: <input type="number" id="amount">
+        </form>
+        <br>
+        From Currency:<select id="FromCurrency">
+            <option value ="vietnam">Viet Nam</option>
+        </select>
+        </br>
+        <br>
+
+        To Currency:<select id="Currency">
+            <option value="usd">USD</option>
+            <option value="euro">Euro</option>
+            <option value="yen">Yen</option>
+        </select>
+        </br>
+        <br>
+
+        <button type="button" onclick="changeMoney(this.form);">Convert</button>
+        <p>
+
+
+        <script>
+
+            function changeMoney() {
+                let a = document.getElementById("amount").value;
+
+                let f = document.getElementById("FromCurrency").value;
+
+                let t = document.getElementById("Currency").value;
+
+                let mon;
+
+                if (f === "vietnam") {
+                    if (t === "usd") mon = a / 23000;
+                    else if (t === "euro") mon = a / 27000;
+                    else if (t === "yen") mon = a / 215;
+                }
+                alert(mon);
+            }
+        </script>
+
+</body>
+</html>
